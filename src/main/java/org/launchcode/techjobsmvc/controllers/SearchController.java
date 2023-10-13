@@ -28,13 +28,12 @@ public class SearchController {
         //return "redirect:";
     }
 
-    // TODO #3 - Create a handler to process a search request and render the updated search view.
 
 
     @PostMapping("results")// showing another search
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
-        ArrayList<Job> jobs = null;
-        if ( searchType.equals("all") && (searchTerm.equals("all") || searchTerm.equals(""))) {
+        ArrayList<Job> jobs;
+        if ( searchType.equals("all") && (searchTerm.equals("all") || searchTerm.isEmpty())) {
             jobs = JobData.findAll();
 
             model.addAttribute("searchType", searchType);
