@@ -10,10 +10,10 @@
 
       <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
         <!--    <p th:replace="~{fragments :: search-form}"></p>-->
+<!--        <div>-->
 
         <form th:action="@{/search/results}" method = "post">
         <h2>Search by:</h2>
-
         <p>
                 <span th:each="column : ${columns}">
                     <input
@@ -22,7 +22,7 @@
                             th:id="${column.key}"
                             th:value="${column.key}"
                             th:checked="${column.key == 'all'}"/>
-                    <label th:for="${column.key}" th:text="${column.value}"></label>
+                    <label  th:for="${column.key}" th:text="${column.value}"></label>
                 </span>
 
         </p>
@@ -34,7 +34,7 @@
 
         <input type="submit" value="Search" />
       </form>
-
+    </div>
       <hr />
 
         <th:block th:each="job : ${jobs}">
@@ -69,7 +69,7 @@
         </table>
         </th:block>
 
-        </div>
+<!--        </div>-->
 
     </body>
     </html>

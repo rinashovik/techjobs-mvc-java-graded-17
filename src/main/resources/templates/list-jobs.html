@@ -12,7 +12,6 @@
 
     <th:block th:each="job : ${jobs}">
         <table class="job-listing">
-<!--            <tbody >-->
 
             <tr>
                 <td>ID</td>
@@ -38,7 +37,6 @@
                 <td>Skill</td>
                 <td th:text="${job.getCoreCompetency()}"></td>
             </tr>
-<!--            </tbody>-->
         </table>
     </th:block>
 
